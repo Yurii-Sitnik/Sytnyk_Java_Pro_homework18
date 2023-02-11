@@ -1,38 +1,30 @@
+import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+public class ArrayToList {
     public static void main(String[] args) {
-        int[] array = new int[10];
+        // given integer array
+        Integer[] array = new Integer[5];
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 3;
+        array[3] = 4;
+        array[4] = 5;
+        // convert array to a list
+        List<Integer> list = toList(array);
+        // print list
+        System.out.println(list);
     }
 
-    class Main
-    {
-        // Generic method to convert an array to an ArrayList
-        public static <T> List<T> convertToList(T arr[])
-        {
-            // create an empty list
-            List<T> list = new ArrayList<>();
-
-            // push each array element into the list
-            for (T i: arr) {
-                list.add(i);
-            }
-
-            // return the list
-            return list;
+    // Generic method to convert an array to an ArrayList
+    public static <T> List<T> toList(T[] array) {
+        // create an empty list
+        List<T> list = new ArrayList<>();
+        // push each array element into the list
+        for (T i : array) {
+            list.add(i);
         }
-
-        // Program to convert an array to a list in Java
-        public static void main(String[] args)
-        {
-            // given string array
-            String str[] = { "A", "B", "C", "D" };
-
-            // convert array to a list
-            List<String> list = convertToList(str);
-
-            // print list
-            System.out.println(list);
-        }
+        // return the list
+        return list;
     }
 }
